@@ -125,9 +125,10 @@ function getEquation(x1, y1, x2, y2) {
   // y = mx + b
   let slope = (y1 - y2) / (x1 - x2);
   let b = y1 - slope * x1;
-  if ((b = +-Infinity)) {
-    return `undefined`;
-  } else if (b > 0) {
+  if (slope == Infinity && b == Infinity) {
+    return "undefined";
+  }
+  if (b > 0) {
     return `y = ${slope}x + ${b}`;
   } else if (b == 0) {
     return `y = ${slope}x`;
